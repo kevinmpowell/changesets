@@ -108,9 +108,7 @@ export function getPackageInfo(packageJson: PackageJSON) {
     // for a non-existent package instead of a E404
     if (result.stdout.toString() === "") {
       return {
-        error: {
-          code: "E404",
-        },
+        "name": packageJson.name,
       };
     }
     return jsonParse(result.stdout.toString());
